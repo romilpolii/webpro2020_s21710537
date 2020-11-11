@@ -1,17 +1,22 @@
-
 import './App.css';
-import Header from './Components/Header';
-import Hello from './Components/Hello';
-import Content from './Components/Content';
+import Card from './Components/Card';
+import{person} from "./Utils/person";
 
 function App() {
   return (
-  //<div> untuk styling <>fragment sama seperti div
-  <>
-    <Header/>
-    <Hello/>
-    <Content/>
+    <>
+        {person.map((item) => {
+        return(
+            <Card 
+              name ={item.name} 
+              institution={item.institution}
+              addres={item.addres}
+              phoneNumber={item.phoneNumber}
+            />
+        );
+    })}
   </>
   );
 }
+
 export default App;
